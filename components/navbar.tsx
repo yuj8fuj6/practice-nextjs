@@ -10,7 +10,7 @@ import { Button } from "./ui/button";
 import { ModeToggle } from "./mode-toggle";
 import { MobileSidebar } from "./mobile-sidebar";
 
-const font = Poppins({ weight: "600", subsets:["latin"] });
+const font = Poppins({ weight: "600", subsets: ["latin"] });
 
 export const Navbar = () => {
   return (
@@ -18,7 +18,12 @@ export const Navbar = () => {
       <div>
         <MobileSidebar />
         <Link href="/">
-          <h1 className={cn("hidden md:block text-xl  md:text-3xl font-bold text-primary", font.className)}>
+          <h1
+            className={cn(
+              "hidden md:block text-xl  md:text-3xl font-bold text-primary",
+              font.className,
+            )}
+          >
             companion.ai
           </h1>
         </Link>
@@ -26,10 +31,10 @@ export const Navbar = () => {
       <div className="flex items-center gap-x-3">
         <Button variant="premium" size="sm">
           Upgrade
-          <Sparkles className="h-4 w-4 fill-white text-white ml-2"/>
+          <Sparkles className="h-4 w-4 fill-white text-white ml-2" />
         </Button>
         <ModeToggle />
-        <UserButton />
+        <UserButton afterSignOutUrl="/" />
       </div>
     </div>
   );
